@@ -22,3 +22,4 @@ def restock():
     # At the end of the function, it will call to the check function to save the executed action in the logs.txt file
     check("Product 'id of the product''name of the product' has been restocked \n")
 
+filter()
