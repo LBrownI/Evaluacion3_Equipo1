@@ -10,7 +10,7 @@ def check(action: str):
     time = now.strftime("%d/%m/%Y %H:%M:%S")
     
     with open("logs.txt", "a") as f:
-        f.write(f"{time}: {action}")
+        f.write(f"{time}: {action}\n")
         
 # This is an example for the filter function
 def filter():
@@ -20,6 +20,6 @@ def filter():
 def restock():
     # ...
     # At the end of the function, it will call to the check function to save the executed action in the logs.txt file
-    check("Product 'id of the product''name of the product' has been restocked \n")
+    check("Product 'id of the product''name of the product' has been restocked")
 
 filter()
