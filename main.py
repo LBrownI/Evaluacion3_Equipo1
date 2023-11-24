@@ -9,7 +9,7 @@ def check(action: str):
     now = datetime.now()
     time = now.strftime("%d/%m/%Y %H:%M:%S")
     
-    with open("logs.txt", "a") as f:
+    with open("logs\\logs.txt", "a") as f:
         f.write(f"{time}: {action}\n")
         
 # This is an example for the filter function
