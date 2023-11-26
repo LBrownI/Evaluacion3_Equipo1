@@ -2,6 +2,7 @@ import pandas as pd
 from functions import check
 
 df = pd.read_csv("database\\techpowerup_gpus.csv")
+df.set_index("id", inplace=True)
 
 options=["Distribute","Restock","Check","Download","Exit"]
 def menu():
