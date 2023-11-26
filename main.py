@@ -22,8 +22,7 @@ match option:
         # call restrock
         print("placeholder")
     case "Check":
-        # call check
-        print("placeholder")
+        check.print_logs()
     case "Download":
         print("placeholder")
         # call download
@@ -42,4 +41,3 @@ def restock():
     # At the end of the function, it will call to the check function to save the executed action in the logs.txt file
     check.save_current_action("Product 'id of the product''name of the product' has been restocked")
 
-filter()

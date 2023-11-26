@@ -7,3 +7,7 @@ def save_current_action(action: str):
     
     with open("logs\\logs.txt", "a") as f:
         f.write(f"{time}: {action}\n")
+        
+def print_logs():
+     with open("logs\\logs.txt", "r") as f:
+        print(f.read())
