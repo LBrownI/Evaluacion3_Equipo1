@@ -1,5 +1,5 @@
-from datetime import datetime
 import pandas as pd
+from functions import check
 
 df = pd.read_csv("database\\techpowerup_gpus.csv")
 
@@ -14,13 +14,23 @@ def menu():
 option=menu()
 print(option)
 
-# This is an example for the check function using the datatime library
-def check(action: str):
-    now = datetime.now()
-    time = now.strftime("%d/%m/%Y %H:%M:%S")
-    
-    with open("logs\\logs.txt", "a") as f:
-        f.write(f"{time}: {action}\n")
+match option:
+    case "Distribute":
+        # call distribute
+        print("placeholder")
+    case "Restock":
+        # call restrock
+        print("placeholder")
+    case "Check":
+        # call check
+        print("placeholder")
+    case "Download":
+        print("placeholder")
+        # call download
+    case "Exit":
+        print("Saving files... (not realy xd)")
+        exit(0)
+
         
 # This is an example for the filter function
 def filter():
@@ -30,6 +40,6 @@ def filter():
 def restock():
     # ...
     # At the end of the function, it will call to the check function to save the executed action in the logs.txt file
-    check("Product 'id of the product''name of the product' has been restocked")
+    check.save_current_action("Product 'id of the product''name of the product' has been restocked")
 
 filter()
