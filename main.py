@@ -31,7 +31,7 @@ match option:
         print("Saving files... (not realy xd)")
         exit(0)
 
-        
+
 # This is an example for the filter function
 def filter():
     gpu_name = df.loc[df['graphics_processor.gpu_name'] == "Auburn"]
