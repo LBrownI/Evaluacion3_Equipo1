@@ -4,15 +4,14 @@ import pandas as pd
 df = pd.read_csv("database\\techpowerup_gpus.csv")
 
 options=["Distribute","Restock","Check","Download","Exit"]
-option=""
-def menu(options):
+def menu():
     option= input(f"*Welcome to inventory System*\nPlease choose one option:\n{options}\n")
     option=option.capitalize()
     while option not in options:
         option= input(f"Please choose only one of these options:\n{options}\n")
         option=option.capitalize()
     return option
-option=menu(options)
+option=menu()
 print(option)
 
 # This is an example for the check function using the datatime library
