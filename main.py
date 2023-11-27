@@ -4,14 +4,15 @@ from functions import check
 df = pd.read_csv("database\\techpowerup_gpus.csv")
 df.set_index("id", inplace=True)
 
-options=["Distribute","Restock","Check","Download","Exit"]
+OPTIONS = ("Distribute","Restock","Check","Download","Exit")
+
 def menu():
-    option= input(f"*Welcome to inventory System*\nPlease choose one option:\n{options}\n")
-    option=option.capitalize()
-    while option not in options:
-        option= input(f"Please choose only one of these options:\n{options}\n")
-        option=option.capitalize()
+    option = input(f"*Welcome to inventory System*\nPlease choose one option:\n{OPTIONS}\n").capitalize()
+    while option not in OPTIONS:
+        option = input(f"Please choose only one of these options:\n{OPTIONS}\n").capitalize()
     return option
+
+
 option=menu()
 print(option)
 
