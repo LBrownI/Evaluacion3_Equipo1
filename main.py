@@ -27,7 +27,7 @@ while True:
             download.download(df)
             # call download
         case "Exit":
-            print("Saving files... (not realy xd)")
+            print("Saving files... (not really xd)")
             exit(0)
         
 
