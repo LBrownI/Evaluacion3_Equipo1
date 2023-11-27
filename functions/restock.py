@@ -8,6 +8,8 @@ def restock(df):
     print(f"The product (id: {id}) {gpu_name} currently has {current_stock} units available.")
     
     new_stock = int(input("How much do you want to restock: "))
+
+    # Add stock to inventory
     df.at[id, 'stock'] = current_stock + new_stock
     print("Product stock updated succesfully")
     

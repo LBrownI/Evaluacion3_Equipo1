@@ -4,3 +4,11 @@
 23/11/2023 13:04:51: Product 'id of the product''name of the product' has been restocked 
 24/11/2023 13:08:34: Product 'id of the product''name of the product' has been restocked
 26/11/2023 20:29:31: The product (id: 0) Intel i740 has been restocked with 1 new units. Now it has 9 units
+27/11/2023 18:23:00: The product (id: 5) Intel i810 Graphics has been restocked with 5 new units. Now it has 6 units
+27/11/2023 18:32:00: The product (id: 5) Intel i810 Graphics has been restocked with 6 new units. Now it has 7 units
+27/11/2023 18:35:01: The product (id: 5) Intel i810 Graphics has been restocked with 5 new units. Now it has 6 units
+27/11/2023 18:36:04: The product (id: 5) Intel i810 Graphics has been restocked with 1 new units. Now it has 7 units
+27/11/2023 18:46:57: The product (id: 1) Intel i740 8 MB has been restocked with 1 new units. Now it has 8 units
+27/11/2023 18:57:17: The product (id: 5) Intel i810 Graphics has been distributed. 1 units were sent to other stores. Remaining stock: 0
+27/11/2023 18:57:53: The product (id: 5) Intel i810 Graphics has been restocked with 20 new units. Now it has 20 units
+27/11/2023 18:58:07: The product (id: 5) Intel i810 Graphics has been distributed. 13 units were sent to other stores. Remaining stock: 7
