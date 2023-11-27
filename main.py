@@ -1,5 +1,5 @@
 import pandas as pd
-from functions import check
+from functions import check, restock
 
 df = pd.read_csv("database\\techpowerup_gpus.csv")
 df.set_index("id", inplace=True)
@@ -21,8 +21,7 @@ match option:
         # call distribute
         print("placeholder")
     case "Restock":
-        # call restrock
-        print("placeholder")
+        restock.restock(df)
     case "Check":
         check.print_logs()
     case "Download":
@@ -32,14 +31,8 @@ match option:
         print("Saving files... (not realy xd)")
         exit(0)
 
-        
+
 # This is an example for the filter function
 def filter():
     gpu_name = df.loc[df['graphics_processor.gpu_name'] == "Auburn"]
     print(gpu_name)
-
-def restock():
-    # ...
-    # At the end of the function, it will call to the check function to save the executed action in the logs.txt file
-    check.save_current_action("Product 'id of the product''name of the product' has been restocked")
-
