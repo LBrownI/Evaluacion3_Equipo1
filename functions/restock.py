@@ -14,3 +14,4 @@ def restock(df):
     print("Product stock updated succesfully")
     
     save_current_action(f"The product (id: {id}) {gpu_name} has been restocked with {new_stock} new units. Now it has {current_stock+new_stock} units")
+    df.to_csv("database\\techpowerup_gpus.csv")
