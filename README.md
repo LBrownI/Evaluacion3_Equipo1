@@ -1,9 +1,19 @@
-# Evaluación N°3 - Taller de programación aplicada
-## Información
-```
-N° de equipo: 01
-Integrantes: Lucas Brown, Vincent Bustamante, Alan Silva
-Fecha de inicio: 20-11-2023
-```
-## Problemática
-Debido a la complejidad de las especificaciones del hardware de las tarjetas gráficas y la gran cantidad de modelos disponibles, la distribuidora enfrenta la problemática de una "Gestión Ineficiente del Inventario". La diversidad de especificaciones, como velocidades de reloj, capacidades de memoria y características exclusivas, complica el seguimiento y control preciso de cada tarjeta gráfica en el inventario. Esto ha llevado a desafíos en la identificación rápida de productos, la actualización efectiva de especificaciones y la gestión óptima de la distribución, afectando la eficiencia operativa y generando posibles pérdidas económicas debido a errores en el manejo de inventario.
+# GPU Inventory System 
+
+Due to the complexity of the hardware specifications of the graphics cards and the large number of models available, the distributor faces the problem of "Inefficient Inventory Management". The diversity of specifications, such as clock speeds, memory capacities, and exclusive features, complicates the precise tracking and control of each graphics card in inventory. This has led to challenges in rapid product identification, effective specification updating and optimal distribution management, affecting operational efficiency and generating potential economic losses due to errors in inventory management.
+
+## Requirements
+
+Python 3.10 or higher
+
+Install pandas
+```python
+-m pip install pandas 
+ ```
+## Authors
+
+- [@LBrownI](https://www.github.com/LBrownI)
+- [@AlanSilvaaa](https://www.github.com/AlanSilvaaa)
+- [@Vinbu](https://www.github.com/Vinbu)
+
+
