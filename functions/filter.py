@@ -36,18 +36,22 @@ def models(filas):
     model = input("What model are you looking for: \n")
     filas_model = filas.loc[filas["gpu_name"].str.contains(model)]
 
-    print(f"The models {model} in stock are these: \n", filas_model)
+    if filas_model.empty:
+        print(f"Gpus model {model} wasn´t found")
+    else:
+        print(f"The models {model} in stock are these: \n", filas_model)
 def ram(df):
-    answer= input("Please put the Gpu's ram size: \n")
+    answer= input("Please put the Gpu's ram size (Indicate MB or GB, Example: 4 GB): \n")
     lines_ram= df.loc[df["memory.memory_size"]==answer]
-    print(f"The GPUs on stock with {answer} ram are these: \n", lines_ram)
+    if lines_ram.empty:
+        print(f"GPUs {answer} ram wasn´t found")
+    else:
+        print(f"The GPUs in stock with {answer} ram are these: \n", lines_ram)
 def filters(df):
     type_filter=["brand","ram"]
-    t_filter= input(f"Please select one of these filters: \n {type_filter}\n")
-    t_filter=t_filter.lower()
+    t_filter= input(f"Please select one of these filters: \n {type_filter}\n").lower()
     while t_filter not in type_filter:
-        t_filter= input(f"Please just choose one of these options: \n {type_filter}\n")
-        t_filter=t_filter.lower()
+        t_filter= input(f"Please just choose one of these options: \n {type_filter}\n").lower()
     if t_filter==type_filter[0]:
         br(df)
     else:
