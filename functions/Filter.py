@@ -1,11 +1,8 @@
 def br(df):
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati"]
-    brand = input(f"what brand are you looking for?, please only select one of these brands: \n {brands}\n")
-    brand = brand.capitalize()
+    brand = input(f"what brand are you looking for?, please only select one of these brands: \n {brands}\n").capitalize()
     while brand not in brands:
-        brand = input(f"Please just select one of these brands: \n{brands}\n")
-        brand = brand.capitalize()
-
+        brand = input(f"Please just select one of these brands: \n{brands}\n").capitalize()
     match brand:
         case "Nvidia":
             brand = brand.upper()
