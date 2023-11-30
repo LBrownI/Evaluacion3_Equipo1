@@ -6,23 +6,37 @@ def br(df):
     match brand:
         case "Nvidia":
             brand = brand.upper()
-            filas_nvidia = df.loc[df["gpu_name"].str.startswith(brand)]
-            print(f"The GPUs {brand} on stock are these: \n", filas_nvidia)
+            filas= locate_brand(brand,df)
+
+            models(filas)
         case "Amd":
             brand = brand.upper()
-            filas_amd = df.loc[df["gpu_name"].str.startswith(brand)]
-            print(f"The GPUs {brand} on stock are these: \n", filas_amd)
+            filas= locate_brand(brand,df)
+
+            models(filas)
         case "Intel":
-            filas_intel = df.loc[df["gpu_name"].str.startswith(brand)]
-            print(f"The GPUs {brand} on stock are these: \n", filas_intel)
+            filas= locate_brand(brand,df)
+
+            models(filas)
         case "Matrox":
-            filas_matrox = df.loc[df["gpu_name"].str.startswith(brand)]
-            print(f"The GPUs {brand} on stock are these: \n", filas_matrox)
+            filas= locate_brand(brand,df)
+
+            models(filas)
         case "Ati":
             brand = brand.upper()
-            filas_ati = df.loc[df["gpu_name"].str.startswith(brand)]
-            print(f"The GPUs {brand} on stock are these: \n", filas_ati)
+            filas= locate_brand(brand,df)
 
+            models(filas)
+
+def locate_brand(brand,df):
+    filas = df.loc[df["gpu_name"].str.startswith(brand)]
+    print(f"The GPUs {brand} on stock are these: \n", filas)
+    return filas
+def models(filas):
+    model = input("What model are you looking for: \n")
+    filas_model = filas.loc[filas["gpu_name"].str.contains(model)]
+
+    print(f"The models {model} in stock are these: \n", filas_model)
 def ram(df):
     answer= input("Please put the Gpu's ram size: \n")
     lines_ram= df.loc[df["memory.memory_size"]==answer]
