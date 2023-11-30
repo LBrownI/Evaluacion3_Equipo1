@@ -24,7 +24,7 @@ def br(df):
             print(f"The GPUs {brand} on stock are these: \n", filas_ati)
 
 def ram(df):
-    answer= input("Please put the Gpu´s ram size: \n")
+    answer= input("Please put the Gpu's ram size: \n")
     lines_ram= df.loc[df["memory.memory_size"]==answer]
     print(f"The GPUs on stock with {answer} ram are these: \n", lines_ram)
 def filters(df):
@@ -38,3 +38,13 @@ def filters(df):
         br(df)
     else:
         ram(df)
+
+def download(df):
+    file_name = input("\nEnter the file name (including extension) for the download: ")
+    
+    try:
+        #Saves the DataFrame to a CSV file
+        df.to_csv(file_name, index=False)
+        print(f"CSV file '{file_name}' downloaded successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
