@@ -1,68 +1,81 @@
+import pandas as pd
+
+df = pd.read_csv('techpowerup_gpus2.csv')
+
 def br(df):
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati"]
-    brand = input(f"what brand are you looking for?, please only select one of these brands: \n {brands}\n").capitalize()
+    brand = input(f"What brand are you looking for? Please select one of these brands: \n {brands}\n").capitalize()
     while brand not in brands:
         brand = input(f"Please just select one of these brands: \n{brands}\n").capitalize()
-    match brand:
-        case "Nvidia":
-            brand = brand.upper()
-            filas= locate_brand(brand,df)
+    return locate_brand(brand, df)
 
-            models(filas)
-        case "Amd":
-            brand = brand.upper()
-            filas= locate_brand(brand,df)
-
-            models(filas)
-        case "Intel":
-            filas= locate_brand(brand,df)
-
-            models(filas)
-        case "Matrox":
-            filas= locate_brand(brand,df)
-
-            models(filas)
-        case "Ati":
-            brand = brand.upper()
-            filas= locate_brand(brand,df)
-
-            models(filas)
-
-def locate_brand(brand,df):
-    filas = df.loc[df["gpu_name"].str.startswith(brand)]
-    print(f"The GPUs {brand} on stock are these: \n", filas)
+def locate_brand(brand, df):
+    filas = df[df["gpu_name"].str.contains(brand, case=False)]
+    
+    if filas.empty:
+        print(f"No GPUs matching brand '{brand}' were found.")
+    else:
+        print(f"The GPUs with brand '{brand}' in stock are these: \n", filas)
+    
     return filas
+
 def models(filas):
-    model = input("What model are you looking for: \n")
-    filas_model = filas.loc[filas["gpu_name"].str.contains(model)]
+    model_input = input("Enter the models you are looking for (comma-separated): \n")
+    models_to_search = [model.strip().lower() for model in model_input.split(',')]
+
+    filas_model = filas[filas["gpu_name"].str.lower().isin(models_to_search)]
 
     if filas_model.empty:
-        print(f"Gpus model {model} wasn´t found")
+        print(f"No GPUs matching the specified models were found.")
     else:
-        print(f"The models {model} in stock are these: \n", filas_model)
+        print(f"The GPUs with the specified models in stock are these: \n", filas_model)
+
+    return filas_model
+
+
 def ram(df):
-    answer= input("Please put the Gpu's ram size (Indicate MB or GB, Example: 4 GB): \n")
-    lines_ram= df.loc[df["memory.memory_size"]==answer]
+    answer = input("Please put the GPU's RAM size(s) (comma-separated, Example: 4 GB, 8 GB): \n")
+    ram_sizes_to_search = [ram.strip().lower() for ram in answer.split(',')]
+
+    lines_ram = df[df["memory.memory_size"].str.lower().isin(ram_sizes_to_search)]
+
     if lines_ram.empty:
-        print(f"GPUs {answer} ram wasn´t found")
+        print(f"GPUs with the specified RAM sizes weren't found.")
     else:
-        print(f"The GPUs in stock with {answer} ram are these: \n", lines_ram)
+        print(f"The GPUs in stock with the specified RAM sizes are these: \n", lines_ram)
+
+    return lines_ram
+
 def filters(df):
-    type_filter=["brand","ram"]
-    t_filter= input(f"Please select one of these filters: \n {type_filter}\n").lower()
-    while t_filter not in type_filter:
-        t_filter= input(f"Please just choose one of these options: \n {type_filter}\n").lower()
-    if t_filter==type_filter[0]:
-        br(df)
-    else:
-        ram(df)
+    type_filter = ["brand", "model", "ram"]
+    chosen_filters = []
+
+    for filter_type in type_filter:
+        response = input(f"Do you want to filter by {filter_type}? (yes/no): ").lower()
+        if response == 'yes':
+            chosen_filters.append(filter_type)
+
+    filtered_df = df.copy()
+
+    for chosen_filter in chosen_filters:
+        if chosen_filter == 'brand':
+            filtered_df = br(filtered_df)
+        elif chosen_filter == 'model':
+            filtered_df = models(filtered_df)
+        elif chosen_filter == 'ram':
+            filtered_df = ram(filtered_df)
+
+    download(filtered_df)
+
 
 def download(df):
     file_name = input("\nEnter the file name (including extension) for the download: ")
-    
+
     try:
-        #Saves the DataFrame to a CSV file
         df.to_csv(file_name, index=False)
         print(f"CSV file '{file_name}' downloaded successfully.")
     except Exception as e:
         print(f"Error: {e}")
+
+filtered_data = filters(df)
+download(filtered_data)
