@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('techpowerup_gpus2.csv')
+df = pd.read_csv('database\\techpowerup_gpus.csv')
 
 def br(df):
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati"]
