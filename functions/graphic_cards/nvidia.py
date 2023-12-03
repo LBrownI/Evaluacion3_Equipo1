@@ -30,6 +30,7 @@ class nvidia:
         self.df_with_filters = self.df[self.df.gpu_name.str.contains(nvidia_series[selected_series])]
         self.selected_series = nvidia_series[selected_series]
 
+
     def gen(self):
         print(self.series_and_gen.get(self.selected_series))
         
