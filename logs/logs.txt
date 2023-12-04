@@ -15,3 +15,4 @@
 28/11/2023 18:10:34: The product (id: 0) Intel i740 has been restocked with 1 new units. Now it has 9 units
 28/11/2023 18:10:47: The product (id: 0) Intel i740 has been restocked with 1 new units. Now it has 9 units
 28/11/2023 18:15:51: The product (id: 0) Intel i740 has been distributed. 1 units were sent to other stores. Remaining stock: 8
+04/12/2023 13:38:37: The product (id: 2) Intel i740 Graphics has been distributed. 4 units were sent to SPDigital. Remaining stock: 5
