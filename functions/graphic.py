@@ -11,7 +11,7 @@ def create_brand_pie_chart():
 
     brand_stocks = [df[df["gpu_name"].str.contains(f"{brand} ", case=False)]["stock"].sum() for brand in brands]
 
-    # Creating explode data
+    # Explotar gráfica
     explode = (0.1, 0.0, 0.2, 0.3, 0.0)
     
     # Creating color parameters
@@ -46,8 +46,6 @@ def create_brand_pie_chart():
     plt.setp(autotexts, size=8, weight="bold")
     ax.set_title("Stock Distribution by Brand")
 
-    # Show plot
     plt.show()
 
-# Call the create_brand_pie_chart function
 create_brand_pie_chart()
