@@ -36,6 +36,7 @@ class Amd:
             "Picasso": [],
             "Pirate Islands": [],
             "Polaris": [],
+            #Issue
             "Radeon": ["Radeon Instinct","Radeon Pro Mac","Radeon Pro Mobile","Radeon Pro","Radeon Sky"],
             "Raven Ridge": [],
             "Rembrandt": [],

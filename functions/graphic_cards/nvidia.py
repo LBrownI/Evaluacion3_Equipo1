@@ -19,6 +19,7 @@ class Nvidia:
             "Mining GPUs": ["Mining GPUs"],
             "NV1": ["NV1"],
             "NVS": ["NVS","NVS Mobile"],
+            #Quadro issue
             "Quadro": ["Quadro","Quadro CX","Quadro FX","Quadro Mobile","Quadro NVS","Quadro Plex","Quadro VX","Quadro2","Quadro4"],
             "Riva": ["Riva"],
             "Tegra": ["Tegra"],
