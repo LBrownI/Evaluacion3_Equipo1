@@ -26,11 +26,7 @@ class nvidia:
             print(f"  [{i+1}] {series}")
 
         selected_series = int(input("\nInput: "))-1
-        
-        # Apply the filters into the df
-        self.df_with_filters = self.df[self.df.gpu_name.str.contains(nvidia_series[selected_series])]
         self.selected_series = nvidia_series[selected_series]
-
 
     def gen(self):
         print(self.series_and_gen.get(self.selected_series))
@@ -42,7 +38,7 @@ class nvidia:
 
         selected_gen = int(input("\nInput: "))-1
         
-        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(f"{self.selected_series} {nvidia_gen[selected_gen]}")]
+        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card.generation.str.contains(f"{self.selected_series} {nvidia_gen[selected_gen]}")]
         print(self.df_with_filters)
         
 a = nvidia(df)
