@@ -2,6 +2,8 @@ import pandas as pd
 from graphic_cards import nvidia
 
 df = pd.read_csv('database\\techpowerup_gpus.csv')
+df.set_index("id", inplace=True)
+# nvidiaasd = nvidia(df)
 
 global brand
 
@@ -22,7 +24,6 @@ def locate_brand(brand, df):
     
     return filas
 
-nvidia = nvidia(df)
 
 def ram(df):
     answer = input("Please put the GPU's RAM size(s) (comma-separated, Example: 4 GB, 8 GB): \n")
@@ -52,7 +53,7 @@ def filters(df):
         if chosen_filter == 'brand':
             filtered_df = br(filtered_df)
         elif chosen_filter == 'series':
-        elif chosen_filter == 'ram':
+        #elif chosen_filter == 'ram':
             filtered_df = ram(filtered_df)
 
     download(filtered_df)
