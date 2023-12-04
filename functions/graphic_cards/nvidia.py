@@ -13,7 +13,7 @@ class nvidia:
         # This doesn't include all of the generations of each series (and not all graphics cards series either)
         self.series_and_gen = {
             "Geforce": ["GeForce 1","GeForce 2","GeForce 3","GeForce 4","GeForce 5","GeForce 6","GeForce 7","GeForce 8","GeForce 9","GeForce FX","GeForce MX","GeForce Go","GeForce PCX", "GeForce2","GeForce4"],
-            "Quadro": [],
+            "Quadro": ["Quadro","Quadro CX","Quadro FX","Quadro Mobile","Quadro NVS","Quadro Plex","Quadro VX","Quadro2","Quadro4"],
             "GTX": [],
             "Riva": ["Riva"]
             }
@@ -42,7 +42,7 @@ class nvidia:
 
         selected_gen = int(input("\nInput: "))-1
         
-        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card.generation.str.contains(f"{self.selected_series} {nvidia_gen[selected_gen]}")]
+        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(f"{self.selected_series} {nvidia_gen[selected_gen]}")]
         print(self.df_with_filters)
         
 a = nvidia(df)

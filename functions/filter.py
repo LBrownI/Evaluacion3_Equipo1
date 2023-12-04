@@ -10,7 +10,7 @@ def br(df):
     return locate_brand(brand, df)
 
 def locate_brand(brand, df):
-    filas = df[df["gpu_name"].str.contains(brand, case=False)]
+    filas = df[df["gpu_name"].str.contains(f"{brand} ", case=False)]
     
     if filas.empty:
         print(f"No GPUs matching brand '{brand}' were found.")
