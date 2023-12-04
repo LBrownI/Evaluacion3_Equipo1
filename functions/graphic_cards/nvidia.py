@@ -13,7 +13,7 @@ class Nvidia:
         # This doesn't include all of the generations of each series (and not all graphics cards series either)
         self.series_and_gen = {
             "Console GPU": ["Microsoft","Nintendo","Sony" ],
-            "Geforce": ["GeForce 1","GeForce 2","GeForce 3","GeForce 4","GeForce 5","GeForce 6","GeForce 7","GeForce 8","GeForce 9","GeForce FX","GeForce MX","GeForce Go","GeForce PCX", "GeForce2","GeForce4"],
+            "GeForce": ["GeForce 1","GeForce 2","GeForce 3","GeForce 4","GeForce 5","GeForce 6","GeForce 7","GeForce 8","GeForce 9","GeForce FX","GeForce MX","GeForce Go","GeForce PCX", "GeForce2","GeForce4"],
             "GRID": ["GRID"],
             "ION": ["ION"],
             "Mining GPUs": ["Mining GPUs"],
@@ -34,6 +34,9 @@ class Nvidia:
 
         selected_series = int(input("\nInput: "))-1
         self.selected_series = nvidia_series[selected_series]
+        
+        self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(nvidia_series[selected_series])]
+        print(self.df_with_filters)
 
     def gen(self):        
         nvidia_gen = self.series_and_gen.get(self.selected_series)
@@ -43,8 +46,12 @@ class Nvidia:
 
         selected_gen = int(input("\nInput: "))-1
         
-        self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
+        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
         print(self.df_with_filters)
+        
+        
+    def get_filtered_df(self):
+        return self.df_with_filters
 
 # THIS IS ONLY TO TEST. DELETE LATER!!!1!
 if __name__ == "__main__":
