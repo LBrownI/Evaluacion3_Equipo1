@@ -14,8 +14,8 @@ class Amd:
         self.series_and_gen = {
             "All-In-One": ["All-In-One(HD 6000)","All-In-One(HD 7000)","All-In-One(HD 8000)","All-In-One(Rx 200)","All-In-One(Rx 300)" ],
             "Arctic Islands": ["Arctic Islands(R5 400)","Arctic Islands(R7 400)","Arctic Islands(RX 400)"],
-            "Bristol Ridge(Rx 300)": [],
-            "Carrizo(Rx 300 Mobile)": [],
+            "Bristol Ridge (Rx 300)": [],
+            "Carrizo (Rx 300 Mobile)": [],
             "Cezanne": ["Cezanne(Vega Mobile)","Cezanne(Vega)"],
             "Console GPU": ["Atari","Chuwi","Microsoft","Nintendo","Sony","Valve","Zhongshan Subor"],
             "Embedded": [],
@@ -28,9 +28,7 @@ class Amd:
             "Mining GPUs": [],
             "Mobility Radeon": [],
             "Mullins": [],
-            "Navi II": [],
-            "Navi III": [],
-            "Navi(RX 5000)": [],
+            "Navi": ["Navi(RX 5000)","Navi II","Navi III"],
             "Northern Islands": [],
             "Palm": [],
             "Picasso": [],
@@ -53,9 +51,6 @@ class Amd:
             "Vega": [],
             "Volcanic Islands": [],
             "Wrestler": [],
-
-
-
             }
 
     def series(self):
@@ -81,8 +76,9 @@ class Amd:
 
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
             print(self.df_with_filters)
-a = Amd(df)
-a.series()
-a.gen()        
 
+if __name__ == "__main__":
+    a = Amd(df)
+    a.series()
+    a.gen()
    

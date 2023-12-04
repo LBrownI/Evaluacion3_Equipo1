@@ -26,7 +26,7 @@ class Intel:
 
     def series(self):
         intel_series = list(self.series_and_gen.keys())
-        print("Select the series:")
+        print("Select the Intel series:")
         for i, series in enumerate(intel_series):
             print(f"  [{i+1}] {series}")
 
@@ -48,6 +48,7 @@ class Intel:
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
             print(self.df_with_filters)
 
-a = Intel(df)
-a.series()
-a.gen()        
+if __name__ == "__main__":
+    a = Intel(df)
+    a.series()
+    a.gen()

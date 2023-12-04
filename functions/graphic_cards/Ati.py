@@ -53,6 +53,7 @@ class Ati:
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
             print(self.df_with_filters)
 
-a = Ati(df)
-a.series()
-a.gen()
+if __name__ == "__main__":
+    a = Ati(df)
+    a.series()
+    a.gen()

@@ -1,9 +1,9 @@
 import pandas as pd
-from graphic_cards import nvidia
+from functions.graphic_cards import Nvidia, Amd, Intel, Matrox, Ati
 
 df = pd.read_csv('database\\techpowerup_gpus.csv')
 df.set_index("id", inplace=True)
-# nvidiaasd = nvidia(df)
+# nvidia = Nvidia(df)
 
 global brand
 
@@ -67,6 +67,3 @@ def download(df):
         print(f"CSV file '{file_name}' downloaded successfully.")
     except Exception as e:
         print(f"Error: {e}")
-
-filtered_data = filters(df)
-download(filtered_data)
