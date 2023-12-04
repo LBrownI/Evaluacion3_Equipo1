@@ -34,9 +34,7 @@ class Nvidia:
         selected_series = int(input("\nInput: "))-1
         self.selected_series = nvidia_series[selected_series]
 
-    def gen(self):
-        print(self.series_and_gen.get(self.selected_series))
-        
+    def gen(self):        
         nvidia_gen = self.series_and_gen.get(self.selected_series)
         print("Select the generation:")
         for i, gen in enumerate(nvidia_gen):
