@@ -1,6 +1,9 @@
 import pandas as pd
+from graphic_cards import nvidia
 
 df = pd.read_csv('database\\techpowerup_gpus.csv')
+
+global brand
 
 def br(df):
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati"]
@@ -19,19 +22,7 @@ def locate_brand(brand, df):
     
     return filas
 
-def models(filas):
-    model_input = input("Enter the models you are looking for (comma-separated): \n")
-    models_to_search = [model.strip().lower() for model in model_input.split(',')]
-
-    filas_model = filas[filas["gpu_name"].str.lower().isin(models_to_search)]
-
-    if filas_model.empty:
-        print(f"No GPUs matching the specified models were found.")
-    else:
-        print(f"The GPUs with the specified models in stock are these: \n", filas_model)
-
-    return filas_model
-
+nvidia = nvidia(df)
 
 def ram(df):
     answer = input("Please put the GPU's RAM size(s) (comma-separated, Example: 4 GB, 8 GB): \n")
@@ -47,7 +38,7 @@ def ram(df):
     return lines_ram
 
 def filters(df):
-    type_filter = ["brand", "model", "ram"]
+    type_filter = ["brand","series","gen", "ram"]
     chosen_filters = []
 
     for filter_type in type_filter:
@@ -60,8 +51,7 @@ def filters(df):
     for chosen_filter in chosen_filters:
         if chosen_filter == 'brand':
             filtered_df = br(filtered_df)
-        elif chosen_filter == 'model':
-            filtered_df = models(filtered_df)
+        elif chosen_filter == 'series':
         elif chosen_filter == 'ram':
             filtered_df = ram(filtered_df)
 
