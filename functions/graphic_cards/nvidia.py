@@ -3,7 +3,7 @@ import pandas as pd
 df = pd.read_csv("database\\techpowerup_gpus.csv")
 df.set_index("id", inplace=True)
 
-class nvidia:
+class Nvidia:
     def __init__(self, df):
         self.df = df
         
@@ -46,7 +46,9 @@ class nvidia:
         
         self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
         print(self.df_with_filters)
-        
-a = nvidia(df)
-a.series()
-a.gen()
+
+# THIS IS ONLY TO TEST. DELETE LATER!!!1!
+if __name__ == "__main__":
+    a = Nvidia(df)
+    a.series()
+    a.gen()
