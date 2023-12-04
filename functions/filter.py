@@ -64,8 +64,8 @@ if selected_filters.get("series"):
         a.series()
         if selected_filters.get("gen"):
             a.gen()
-    filtered_df = a.get_filtered_df()
-if selected_filters.get("ram"):
-    filtered_df = ram(filtered_df)
-    
+        filtered_df = a.get_filtered_df()
+        if selected_filters.get("ram"):
+            filtered_df = ram(filtered_df)
+
 download(filtered_df)
