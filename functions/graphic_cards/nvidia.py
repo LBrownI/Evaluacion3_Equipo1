@@ -18,7 +18,6 @@ class nvidia:
             "Riva": ["Riva"]
             }
 
-    
     def series(self):
         nvidia_series = list(self.series_and_gen.keys())
         print("Select the series:")
@@ -38,7 +37,7 @@ class nvidia:
 
         selected_gen = int(input("\nInput: "))-1
         
-        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card.generation.str.contains(f"{self.selected_series} {nvidia_gen[selected_gen]}")]
+        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
         print(self.df_with_filters)
         
 a = nvidia(df)
