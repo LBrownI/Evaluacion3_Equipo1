@@ -12,7 +12,7 @@ class nvidia:
         
         # This doesn't include all of the generations of each series (and not all graphics cards series either)
         self.series_and_gen = {
-            "Geforce": ["GeForce 1","GeForce 2","GeForce 3","GeForce 4","GeForce 5","GeForce 6"],
+            "Geforce": ["GeForce 1","GeForce 2","GeForce 3","GeForce 4","GeForce 5","GeForce 6","GeForce 7","GeForce 8","GeForce 9","GeForce FX","GeForce MX","GeForce Go","GeForce PCX", "GeForce2","GeForce4"],
             "Quadro": [],
             "GTX": [],
             "Riva": ["Riva"]
