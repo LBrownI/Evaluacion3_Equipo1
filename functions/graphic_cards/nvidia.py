@@ -12,10 +12,17 @@ class nvidia:
         
         # This doesn't include all of the generations of each series (and not all graphics cards series either)
         self.series_and_gen = {
+            "Console GPU": ["Microsoft","Nintendo","Sony" ],
             "Geforce": ["GeForce 1","GeForce 2","GeForce 3","GeForce 4","GeForce 5","GeForce 6","GeForce 7","GeForce 8","GeForce 9","GeForce FX","GeForce MX","GeForce Go","GeForce PCX", "GeForce2","GeForce4"],
+            "GRID": ["GRID"],
+            "ION": ["ION"],
+            "Mining GPUs": ["Mining GPUs"],
+            "NV1": ["NV1"],
+            "NVS": ["NVS","NVS Mobile"],
             "Quadro": ["Quadro","Quadro CX","Quadro FX","Quadro Mobile","Quadro NVS","Quadro Plex","Quadro VX","Quadro2","Quadro4"],
-            "GTX": [],
-            "Riva": ["Riva"]
+            "Riva": ["Riva"],
+            "Tegra": ["Tegra"],
+            "Tesla": ["Tesla"],
             }
 
     def series(self):
