@@ -14,7 +14,7 @@ def br():
     return brand
 
 def locate_brand(brand, df):
-    rows = df[df["gpu_name"].str.startswith(brand, case=False)]
+    rows = df[df["gpu_name"].str.match(brand, case=False)]
     
     if rows.empty:
         print(f"No GPUs matching brand '{brand}' were found.")
