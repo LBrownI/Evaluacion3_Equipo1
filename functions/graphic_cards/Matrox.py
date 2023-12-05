@@ -28,14 +28,12 @@ class Matrox:
         self.selected_series = matrox_series[selected_series]
         
         self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(matrox_series[selected_series])]
-        print(self.df_with_filters)
 
     def gen(self):
         matrox_gen = self.series_and_gen.get(self.selected_series)
         
         if matrox_gen == []:
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
-            print(self.df_with_filters)
         else:
             print("\nSelect the generation:")
             for i, gen in enumerate(matrox_gen):
@@ -43,7 +41,9 @@ class Matrox:
             selected_gen = int(input("\nInput: "))-1
 
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
-            print(self.df_with_filters)
+
+    def get_filtered_df(self):
+        return self.df_with_filters
 
 if __name__ == "__main__":
     a = Matrox(df)

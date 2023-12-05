@@ -40,7 +40,6 @@ class Intel:
         
         if intel_gen == []:
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
-            print(self.df_with_filters)
         else:
             print("\nSelect the generation:")
             for i, gen in enumerate(intel_gen):
@@ -48,7 +47,6 @@ class Intel:
             selected_gen = int(input("\nInput: "))-1
 
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
-            print(self.df_with_filters)
     
     
     def get_filtered_df(self):

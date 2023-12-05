@@ -39,14 +39,12 @@ class Ati:
         self.selected_series = ati_series[selected_series]
         
         self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(ati_series[selected_series])]
-        print(self.df_with_filters)
 
     def gen(self):
         ati_gen = self.series_and_gen.get(self.selected_series)
         
         if ati_gen == []:
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
-            print(self.df_with_filters)
         else:
             print("\nSelect the generation:")
             for i, gen in enumerate(ati_gen):
@@ -54,7 +52,9 @@ class Ati:
             selected_gen = int(input("\nInput: "))-1
 
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
-            print(self.df_with_filters)
+
+    def get_filtered_df(self):
+        return self.df_with_filters
 
 if __name__ == "__main__":
     a = Ati(df)
