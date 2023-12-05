@@ -13,6 +13,15 @@ def br():
         brand = input(f"Please just select one of these brands: \n{brands}\n").capitalize()
     return brand
 
+def locate_brand(brand, df):
+    rows = df[df["gpu_name"].str.startswith(brand, case=False)]
+    
+    if rows.empty:
+        print(f"No GPUs matching brand '{brand}' were found.")
+    else:
+        print(f"The GPUs with the brand '{brand}' in stock are these:", rows)
+    
+    return rows
 
 def filters():
     global selected_filters
@@ -59,7 +68,9 @@ def asjdiojasdjoiasd():
     brand = br()
     filters()
     print(selected_filters)
-        
+
+    filtered_df = locate_brand(brand,df)
+   
     if selected_filters.get("series"):
         if brand == "Nvidia":
             a = Nvidia(df)
