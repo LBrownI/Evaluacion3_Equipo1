@@ -14,16 +14,16 @@ class Nvidia:
         self.series_and_gen = {
             "Console GPU": ["Microsoft","Nintendo","Sony" ],
             "GeForce": ["GeForce 1","GeForce 2","GeForce 3","GeForce 4","GeForce 5","GeForce 6","GeForce 7","GeForce 8","GeForce 9","GeForce FX","GeForce MX","GeForce Go","GeForce PCX", "GeForce2","GeForce4"],
-            "GRID": ["GRID"],
-            "ION": ["ION"],
-            "Mining GPUs": ["Mining GPUs"],
-            "NV1": ["NV1"],
+            "GRID": [],
+            "ION": [],
+            "Mining GPUs": [],
+            "NV1": [],
             "NVS": ["NVS","NVS Mobile"],
             #Quadro issue
             "Quadro": ["Quadro","Quadro CX","Quadro FX","Quadro Mobile","Quadro NVS","Quadro Plex","Quadro VX","Quadro2","Quadro4"],
-            "Riva": ["Riva"],
-            "Tegra": ["Tegra"],
-            "Tesla": ["Tesla"],
+            "Riva": [],
+            "Tegra": [],
+            "Tesla": [],
             }
 
     def series(self):
@@ -36,18 +36,20 @@ class Nvidia:
         self.selected_series = nvidia_series[selected_series]
         
         self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(nvidia_series[selected_series])]
-        print(self.df_with_filters)
 
     def gen(self):        
         nvidia_gen = self.series_and_gen.get(self.selected_series)
-        print("Select the generation:")
-        for i, gen in enumerate(nvidia_gen):
-            print(f"  [{i+1}] {gen}")
-
-        selected_gen = int(input("\nInput: "))-1
         
-        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
-        print(self.df_with_filters)
+        if nvidia_gen == []:
+            self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
+        else:
+            print("Select the generation:")
+            for i, gen in enumerate(nvidia_gen):
+                print(f"  [{i+1}] {gen}")
+
+            selected_gen = int(input("\nInput: "))-1
+            
+            self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
         
         
     def get_filtered_df(self):

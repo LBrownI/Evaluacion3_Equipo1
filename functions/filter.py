@@ -67,6 +67,7 @@ def asjdiojasdjoiasd():
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
+            print(filtered_df)
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
 
@@ -76,15 +77,37 @@ def asjdiojasdjoiasd():
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
+            print(filtered_df)
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
 
+        if brand == "Matrox":
+            a = Matrox(df)
+            a.series()
+            if selected_filters.get("gen"):
+                a.gen()
+            filtered_df = a.get_filtered_df()
+            print(filtered_df)
+            if selected_filters.get("ram"):
+                filtered_df = ram(filtered_df)
+        
         if brand == "Intel":
             a = Intel(df)
             a.series()
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
+            print(filtered_df)
+            if selected_filters.get("ram"):
+                filtered_df = ram(filtered_df)
+        
+        if brand == "Ati":
+            a = Ati(df)
+            a.series()
+            if selected_filters.get("gen"):
+                a.gen()
+            filtered_df = a.get_filtered_df()
+            print(filtered_df)
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
     download(filtered_df)
