@@ -20,7 +20,7 @@ def distribute(df):
     df.at[id, 'stock'] = current_stock - distribution_amount
     print(f"{distribution_amount} units of {gpu_name} distributed to {distribution_location} successfully.")
 
-    save_current_action(f"The product (id: {id}) {gpu_name} has been distributed. {distribution_amount} units were sent to {distribution_location}. Remaining stock: {current_stock - distribution_amount}")
+    save_current_action(f"[DISTRIBUTE] The product (id: {id}) {gpu_name} has been distributed. {distribution_amount} units were sent to {distribution_location}. Remaining stock: {current_stock - distribution_amount}")
     df.to_csv("database\\techpowerup_gpus.csv")
 
 

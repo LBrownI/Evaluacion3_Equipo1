@@ -35,7 +35,7 @@ class Amd:
             "Pirate Islands": [],
             "Polaris": [],
             #Issue
-            "Radeon": ["Radeon Instinct","Radeon Pro Mac","Radeon Pro Mobile","Radeon Pro","Radeon Sky"],
+            "Radeon ": ["Radeon Instinct","Radeon Pro Mac","Radeon Pro Mobile","Radeon Pro","Radeon Sky"],
             "Raven Ridge": [],
             "Rembrandt": [],
             "Renoir": [],
@@ -63,21 +63,19 @@ class Amd:
         self.selected_series = amd_series[selected_series]
         
         self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(amd_series[selected_series])]
+        print(self.df_with_filters)
 
 
     def gen(self):        
-        amd_gen = self.series_and_gen.get(self.selected_series)
-        
-        if amd_gen == []:
-            self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
-        else:
-            print("Select the generation:")
-            for i, gen in enumerate(amd_gen):
-                print(f"  [{i+1}] {gen}")
+        nvidia_gen = self.series_and_gen.get(self.selected_series)
+        print("Select the generation:")
+        for i, gen in enumerate(nvidia_gen):
+            print(f"  [{i+1}] {gen}")
 
-            selected_gen = int(input("\nInput: "))-1
-            
-            self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
+        selected_gen = int(input("\nInput: "))-1
+        
+        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains("Sumo")]
+        print(self.df_with_filters)
             
             
     def get_filtered_df(self):
