@@ -26,11 +26,11 @@ class Intel:
 
     def series(self):
         intel_series = list(self.series_and_gen.keys())
-        print("Select the Intel series:")
+        print("-----> INTEL SERIES SELECT MENU <-----\n")
         for i, series in enumerate(intel_series):
             print(f"  [{i+1}] {series}")
 
-        selected_series = int(input("\nInput: "))-1
+        selected_series = int(input("\nSelected series: "))-1
         self.selected_series = intel_series[selected_series]
         
         self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(intel_series[selected_series])]
@@ -41,10 +41,10 @@ class Intel:
         if intel_gen == []:
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
         else:
-            print("\nSelect the generation:")
+            print("-----> INTEL GEN SELECT MENU <-----\n")
             for i, gen in enumerate(intel_gen):
                 print(f"  [{i+1}] {gen}")
-            selected_gen = int(input("\nInput: "))-1
+            selected_gen = int(input("\nSelected gen: "))-1
 
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
     

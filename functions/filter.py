@@ -18,8 +18,6 @@ def locate_brand(brand, df):
     
     if rows.empty:
         print(f"No GPUs matching brand '{brand}' were found.")
-    else:
-        print(f"The GPUs with the brand '{brand}' in stock are these:", rows)
     
     return rows
 
@@ -29,16 +27,16 @@ def filters():
             "gen": False,
             "ram": False}
     
-    response = input(f"Do you want to filter by {"series"}? (yes/no): ").lower()
-    if response == 'yes':
+    series_reply = input(f"Do you want to filter by {"series"}? (yes/no): ").lower()
+    if series_reply == 'yes':
         selected_filters["series"] = True
     if selected_filters.get("series"):
-        response = input(f"Do you want to filter by {"gen"}? (yes/no): ").lower()
-        if response == 'yes':
+        gen_reply = input(f"Do you want to filter by {"gen"}? (yes/no): ").lower()
+        if gen_reply == 'yes':
             selected_filters["gen"] = True
-    response = input(f"Do you want to filter by {"ram"}? (yes/no): ").lower()
-    if response == 'yes':
-        selected_filters["ram"] = True
+        ram_reply = input(f"Do you want to filter by {"ram"}? (yes/no): ").lower()
+        if ram_reply == 'yes':
+            selected_filters["ram"] = True
 
 def ram(df):
     answer = input("Please put the GPU's RAM size(s) (comma-separated, Example: 4 GB, 8 GB): \n")
@@ -48,28 +46,24 @@ def ram(df):
 
     if lines_ram.empty:
         print(f"GPUs with the specified RAM sizes weren't found.")
-    else:
-        print(f"The GPUs in stock with the specified RAM sizes are these: \n", lines_ram)
-
+        
     return lines_ram
 
 def download(df):
     file_name = input("\nEnter the file name (including extension) for the download: ")
 
     try:
-        df.to_csv(file_name, index=False)
-        print(f"CSV file '{file_name}' downloaded successfully.")
+        df.to_csv(f"{file_name}.csv", index=False)
+        print(f"CSV file '{file_name}.csv' downloaded successfully.")
     except Exception as e:
         print(f"Error: {e}")
-
-
 
 def asjdiojasdjoiasd():
     brand = br()
     filters()
-    print(selected_filters)
+    print(f"\n{selected_filters}\n")
 
-    filtered_df = locate_brand(brand,df)
+    filtered_df = locate_brand(brand, df)
    
     if selected_filters.get("series"):
         if brand == "Nvidia":
@@ -78,9 +72,8 @@ def asjdiojasdjoiasd():
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            print(filtered_df)
             if selected_filters.get("ram"):
-                filtered_df = ram(filtered_df)
+                filtered_df = ram(filtered_df)           
 
         if brand == "Amd":
             a = Amd(df)
@@ -88,7 +81,6 @@ def asjdiojasdjoiasd():
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            print(filtered_df)
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
 
@@ -98,7 +90,6 @@ def asjdiojasdjoiasd():
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            print(filtered_df)
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
         
@@ -108,7 +99,6 @@ def asjdiojasdjoiasd():
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            print(filtered_df)
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
         
@@ -118,7 +108,6 @@ def asjdiojasdjoiasd():
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            print(filtered_df)
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
     download(filtered_df)
