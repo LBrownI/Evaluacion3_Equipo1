@@ -26,7 +26,7 @@ while True:
         case "Check":
             check.print_logs()
         case "Filter":
-            filter.filters(df)
+            filter.asjdiojasdjoiasd()
         case "Exit":
             print("Saving files... (not really xd)")
             exit(0)
