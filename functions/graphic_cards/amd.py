@@ -85,4 +85,5 @@ if __name__ == "__main__":
     b = Amd(df)
     b.series()
     b.gen()
-   
+
+# asd
