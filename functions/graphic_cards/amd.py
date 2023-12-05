@@ -12,7 +12,7 @@ class Amd:
         
         # This doesn't include all of the generations of each series (and not all graphics cards series either)
         self.series_and_gen = {
-            "All-In-One": ["All-In-One(HD 6000)","All-In-One(HD 7000)","All-In-One(HD 8000)","All-In-One(Rx 200)","All-In-One(Rx 300)" ],
+            "All-In-One": ["(HD 6000)","All-In-One(HD 7000)","All-In-One(HD 8000)","All-In-One(Rx 200)","All-In-One(Rx 300)" ],
             "Arctic Islands": ["Arctic Islands(R5 400)","Arctic Islands(R7 400)","Arctic Islands(RX 400)"],
             "Bristol Ridge (Rx 300)": [],
             "Carrizo (Rx 300 Mobile)": [],
@@ -74,7 +74,7 @@ class Amd:
 
         selected_gen = int(input("\nInput: "))-1
         
-        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
+        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains("Sumo")]
         print(self.df_with_filters)
             
             
@@ -82,7 +82,7 @@ class Amd:
         return self.df_with_filters
 
 if __name__ == "__main__":
-    a = Amd(df)
-    a.series()
-    a.gen()
+    b = Amd(df)
+    b.series()
+    b.gen()
    

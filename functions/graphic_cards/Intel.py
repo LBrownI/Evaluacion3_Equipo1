@@ -50,6 +50,10 @@ class Intel:
 
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
             print(self.df_with_filters)
+    
+    
+    def get_filtered_df(self):
+        return self.df_with_filters
 
 if __name__ == "__main__":
     a = Intel(df)

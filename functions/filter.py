@@ -1,5 +1,5 @@
 import pandas as pd
-from functions.graphic_cards import Nvidia
+from functions.graphic_cards import Nvidia, Amd, Intel, Ati, Matrox
 
 df = pd.read_csv('database\\techpowerup_gpus.csv')
 df.set_index("id", inplace=True)
@@ -54,18 +54,37 @@ def download(df):
         print(f"Error: {e}")
 
 
-brand = br()
-filters()
-print(selected_filters)
 
-if selected_filters.get("series"):
-    if brand == "Nvidia":
-        a = Nvidia(df)
-        a.series()
-        if selected_filters.get("gen"):
-            a.gen()
-        filtered_df = a.get_filtered_df()
-        if selected_filters.get("ram"):
-            filtered_df = ram(filtered_df)
+def asjdiojasdjoiasd():
+    brand = br()
+    filters()
+    print(selected_filters)
+        
+    if selected_filters.get("series"):
+        if brand == "Nvidia":
+            a = Nvidia(df)
+            a.series()
+            if selected_filters.get("gen"):
+                a.gen()
+            filtered_df = a.get_filtered_df()
+            if selected_filters.get("ram"):
+                filtered_df = ram(filtered_df)
 
-download(filtered_df)
+        if brand == "Amd":
+            a = Amd(df)
+            a.series()
+            if selected_filters.get("gen"):
+                a.gen()
+            filtered_df = a.get_filtered_df()
+            if selected_filters.get("ram"):
+                filtered_df = ram(filtered_df)
+
+        if brand == "Intel":
+            a = Intel(df)
+            a.series()
+            if selected_filters.get("gen"):
+                a.gen()
+            filtered_df = a.get_filtered_df()
+            if selected_filters.get("ram"):
+                filtered_df = ram(filtered_df)
+    download(filtered_df)
