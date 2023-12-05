@@ -7,11 +7,12 @@ def restock(df):
     current_stock = product.iloc[0]["stock"]
     print(f"The product (id: {id}) {gpu_name} currently has {current_stock} units available.")
     
+    distribution_location = input("Enter the location where the product will be distributed: ")
     new_stock = int(input("How much do you want to restock: "))
 
     # Add stock to inventory
     df.at[id, 'stock'] = current_stock + new_stock
     print("Product stock updated succesfully")
     
-    save_current_action(f"The product (id: {id}) {gpu_name} has been restocked with {new_stock} new units. Now it has {current_stock+new_stock} units")
+    save_current_action(f"[RESTOCK] The product (id: {id}) {gpu_name} has been restocked. {new_stock} new units were received from {distribution_location}. Now it has {current_stock+new_stock} units")
     df.to_csv("database\\techpowerup_gpus.csv")
