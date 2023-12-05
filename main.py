@@ -18,7 +18,7 @@ while True:
 
     match option:
         case "Graphic":
-            graphic.create_brand_pie_chart()
+            graphic.brand_pie_chart()
         case "Distribute":
             distribute.distribute(df)
         case "Restock":

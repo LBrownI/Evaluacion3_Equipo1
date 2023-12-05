@@ -6,7 +6,7 @@ from matplotlib.patheffects import withStroke
 df = pd.read_csv('database\\techpowerup_gpus.csv')
 df.set_index("id", inplace=True)
 
-def create_brand_pie_chart():
+def brand_pie_chart():
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati"]
 
     brand_stocks = [df[df["gpu_name"].str.contains(f"{brand} ", case=False)]["stock"].sum() for brand in brands]
@@ -48,4 +48,3 @@ def create_brand_pie_chart():
 
     plt.show()
 
-create_brand_pie_chart()
