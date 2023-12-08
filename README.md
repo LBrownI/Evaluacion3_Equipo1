@@ -10,6 +10,14 @@ Install pandas
 ```python
 -m pip install pandas 
  ```
+Install matplotlib
+```python
+-m pip install matplotlib 
+ ```
+Install openpyxl
+```python
+-m pip install openpyxl
+ ```
 ## Authors
 
 - [@LBrownI](https://www.github.com/LBrownI)
