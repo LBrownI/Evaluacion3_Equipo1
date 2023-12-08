@@ -20,7 +20,7 @@ def update(df):
                 print("The Data Base was updated")
                 return df
             except:
-                print("The folder doesn´t exist, please verify it, verify the Data Base´s name or the back-slashes")
+                print("The folder doesn't exist, please verify it, verify the Data Base's name or the back-slashes")
             
         case "No":
             return df

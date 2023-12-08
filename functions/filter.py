@@ -49,14 +49,30 @@ def ram(df):
         
     return lines_ram
 
-def download(df):
-    file_name = input("\nEnter the file name (including extension) for the download: ")
-
+def csv_to_excel(df):
     try:
-        df.to_csv(f"{file_name}.csv", index=False)
-        print(f"CSV file '{file_name}.csv' downloaded successfully.")
+        excel_file = input("\nEnter the  file name for the download: ")
+        sheet_name = input("\nEnter the sheet name for the Excel file (press Enter for default 'Sheet1'): ")
+        if not sheet_name:
+            sheet_name = 'Sheet1'
+        df.to_excel(f"{excel_file}.xlsx", index=False, sheet_name=sheet_name, table_name='MyTable')
+        print(f"Excel file '{excel_file}.xlsx' downloaded successfully.")
     except Exception as e:
         print(f"Error: {e}")
+
+def download(df):
+    download_option = input("\nDownload as Excel or CSV?\n").upper()
+    if download_option == "CSV":
+        file_name = input("\nEnter the CSV file name for the download: ")
+        try:
+            df.to_csv(f"{file_name}.csv", index=False)
+            print(f"CSV file '{file_name}.csv' downloaded successfully.")
+        except Exception as e:
+            print(f"Error: {e}")
+    if download_option == "EXCEL":
+        csv_to_excel(df)
+    else:
+        print("Not a valid option: Select between Excel or CSV")
 
 def asjdiojasdjoiasd():
     brand = br()

@@ -4,7 +4,7 @@ from functions import check, restock, distribute, filter, graphic, update
 df = pd.read_csv("database\\techpowerup_gpus.csv")
 df.set_index("id", inplace=True)
 
-OPTIONS = ("Restock","Distribute","Check","Graphic","Filter","Update","Exit")
+OPTIONS = ("Restock","Distribute","Check","Graphic","Download","Update","Exit")
 
 def menu():
     option = input(f"\n*Welcome to inventory System*\nPlease choose one option:\n{OPTIONS}\n").capitalize()
@@ -25,7 +25,7 @@ while True:
             restock.restock(df)
         case "Check":
             check.print_logs()
-        case "Filter":
+        case "Download":
             filter.asjdiojasdjoiasd()
         case "Update":
             df = update.update(df)
