@@ -3,7 +3,7 @@ from functions.check import save_current_action
 
 def update(df):
     answer = input("Do you want to update the Data Base (Yes/No)?: ").capitalize()
-    print(answer)
+
     OPTIONS = ("Yes", "No")
     while answer not in OPTIONS:
         answer= input("Please just input 'Yes' or 'No': ").capitalize()
@@ -15,7 +15,7 @@ def update(df):
             try:
                 new_df= pd.read_csv(new_df)
                 new_df.set_index("id", inplace=True)
-                
+                new_df = pd.merge(df, new_df, how='outer', on='clave')
                 df= new_df
                 print("The Data Base was updated")
                 return df

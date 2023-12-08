@@ -71,10 +71,8 @@ def download(df):
             print(f"CSV file '{file_name}.csv' downloaded successfully.")
         except Exception as e:
             print(f"Error: {e}")
-    if download_option == "EXCEL":
+    elif download_option == "EXCEL":
         csv_to_excel(df)
-    else:
-        print("Not a valid option: Select between Excel or CSV")
 
 def asjdiojasdjoiasd():
     brand = br()
