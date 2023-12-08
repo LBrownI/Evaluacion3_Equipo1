@@ -4,7 +4,7 @@ Due to the complexity of the hardware specifications of the graphics cards and t
 
 ## Requirements
 
-Python 3.10 or higher
+Python 3.10 or higher with pip
 
 Install pandas
 ```python
