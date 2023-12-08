@@ -13,7 +13,7 @@ class Matrox:
         # This doesn't include all of the generations of each series (and not all graphics cards series either)
         self.series_and_gen = {
             "G Series": ["G1xx","G2xx","G3xx","G4xx","G5xx"],
-            "Mxxx": [],
+            "M (Mxxx)": [],
             "Parhelia": [],
             "QID": [],
             }

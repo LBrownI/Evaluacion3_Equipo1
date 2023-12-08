@@ -21,7 +21,9 @@ class Intel:
             "H3C Graphics": [],
             "HD Graphics": ["Alder Lake","Broadwell","Coffee Lake","Comet Lake","Haswell","Ivy Bridge","Kaby Lake","Rocket Lake","Sandy Bridge","Skylake","Westmere"],
             "HD Graphics-M": ["Alder Lake","Broadwell","Coffee Lake","Comet Lake","Haswell","Ice Lake","Ivy Bridge","Jasper Lake","Kaby Lake Refresh","Kaby Lake","Lakefield","Sandy Bridge","Tiger Lake","Westmere","Whiskey Lake"],
-            "HD Graphics-T": ["Alder Lake","Broadwell","Coffee Lake","Comet Lake","Haswell","Ice Lake","Ivy Bridge","Jasper Lake","Kaby Lake Refresh","Kaby Lake","Lakefield","Sandy Bridge","Tiger Lake","Westmere","Whiskey Lake"],
+            "HD Graphics-T": ["Airmont","Amber Lake","Bay Trail","Goldmont Plus","Goldmont"], #issue: specific case here
+            "HD Graphics-W": ["Broadwell","Coffee Lake","Comet Lake","Haswell","Ivy Bridge","Rocket Lake","Sandy Bridge","Skylake"],
+            "HD Graphics-MW": [],
             "Knights Corner": [],
             "Knights Ferry": [],
             "Xe Graphics": [],
@@ -40,7 +42,7 @@ class Intel:
 
     def gen(self):
         intel_gen = self.series_and_gen.get(self.selected_series)
-        specific_gens = "Graphics"
+        
 
         if intel_gen == []:
             self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
@@ -50,9 +52,10 @@ class Intel:
             for i, gen in enumerate(intel_gen):
                 print(f"  [{i+1}] {gen}")
             selected_gen = int(input("\nSelected gen: "))-1
-            if intel_gen[selected_gen] == specific_gens:
-                self.df_with_filters = self.df[self.df["graphics_card_generation"] == specific_gens]
-                print(self.df_with_filters)
+            if intel_gen[selected_gen] == "Goldmont":
+                self.df_with_filters = self.df[self.df["graphics_card_generation"] == "Goldmont"]   
+            if intel_gen[selected_gen] == "Graphics":
+                self.df_with_filters = self.df[self.df["graphics_card_generation"] == "Graphics"]    
             else:
                 self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
     

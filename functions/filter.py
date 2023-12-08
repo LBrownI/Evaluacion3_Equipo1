@@ -55,7 +55,7 @@ def csv_to_excel(df):
         sheet_name = input("\nEnter the sheet name for the Excel file (press Enter for default 'Sheet1'): ")
         if not sheet_name:
             sheet_name = 'Sheet1'
-        df.to_excel(f"{excel_file}.xlsx", index=False, sheet_name=sheet_name, table_name='MyTable')
+        df.to_excel(f"{excel_file}.xlsx", index=False, sheet_name=sheet_name)
         print(f"Excel file '{excel_file}.xlsx' downloaded successfully.")
     except Exception as e:
         print(f"Error: {e}")

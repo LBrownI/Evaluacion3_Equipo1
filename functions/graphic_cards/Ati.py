@@ -12,20 +12,19 @@ class Ati:
         
         # This doesn't include all of the generations of each series (and not all graphics cards series either)
         self.series_and_gen = {
-            "All-In-Wonder": [],
-            #ISSUE WITH CONSOLE GPUS ACROSS ALL CLASSES, if we tackle the issue would solve other issues with all clases aswell or maybe im dumb and its not realted at all to the others and this is already solved,,,
+            "All-In-Wonder": ["128","2006 Edition","7000","8500","9000","HD","X","X1"], #issue: specific case here
             "Console GPU": ["Microsoft","Nintendo"],
             "EGA": [],
-            "Embedded": [],
-            "Evergreen": [],
-            "Fire": ["Fire GL","FireGL","FireMV Multi-View","FirePro Mobility","FirePro Multi-View","FirePro RG","FirePro"],
+            "Embedded": ["2000","4000"],
+            "Evergreen": ["HD 5400","HD 5500","HD 5600","HD 5700","HD 5800","HD 5900"],
+            "Fire": ["Fire GL","FireGL","FireMV Multi-View","FirePro Mobility","FirePro Multi-View","FirePro RG","FirePro"], #issue: specific case here
             "M": ["M1x","M2x","M5x","M6","M6x","M7","M7x","M8x","M9","M9x"],
             "Mach": ["Mach 32","Mach 64","Mach 8"],
             "Manhattan": [],
             "MDA/CGA": [],
             "Mobility FireGL": [],
             "Radeon": ["Radeon IGP","Radeon R100","Radeon R200","Radeon R300","Radeon R400 AGP","Radeon R400 PCIe","Radeon R500 AGP","Radeon R500 PCIe","Radeon R600","Radeon R700"],
-            "Rage": ["Rage","Rage 2","Rage 3","Rage 4","Rage 6","Rage GL","Rage Mobility"],
+            "Rage": ["Rage","Rage 2","Rage 3","Rage 4","Rage 6","Rage GL","Rage Mobility"], #issue: specific case here
             "VGA": [],
             }
 
