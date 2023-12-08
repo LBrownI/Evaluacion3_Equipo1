@@ -1,10 +1,10 @@
 import pandas as pd
-from functions import check, restock, distribute, filter
+from functions import check, restock, distribute, filter, graphic, update
 
 df = pd.read_csv("database\\techpowerup_gpus.csv")
 df.set_index("id", inplace=True)
 
-OPTIONS = ("Distribute","Restock","Check", "Filter","Exit")
+OPTIONS = ("Restock","Distribute","Check","Graphic","Download","Update","Exit")
 
 def menu():
     option = input(f"\n*Welcome to inventory System*\nPlease choose one option:\n{OPTIONS}\n").capitalize()
@@ -17,14 +17,18 @@ while True:
     print("You chose:",option)
 
     match option:
+        case "Graphic":
+            graphic.brand_pie_chart()
         case "Distribute":
             distribute.distribute(df)
         case "Restock":
             restock.restock(df)
         case "Check":
             check.print_logs()
-        case "Filter":
-            filter.filters(df)
+        case "Download":
+            filter.asjdiojasdjoiasd()
+        case "Update":
+            df = update.update(df)
         case "Exit":
             print("Saving files... (not really xd)")
             exit(0)
