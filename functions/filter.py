@@ -63,7 +63,7 @@ def csv_to_excel(df):
 def download(df):
     download_option = input("\nDownload as Excel or CSV?\n").upper()
     while (download_option!="EXCEL")and(download_option!="CSV"):
-        download_option = input("Please just select 'Excel' or 'Csv'").upper()
+        download_option = input("Please just select 'Excel' or 'Csv': \n").upper()
     if download_option == "CSV":
         file_name = input("\nEnter the CSV file name for the download: ")
         try:
