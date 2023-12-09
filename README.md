@@ -6,7 +6,7 @@ Due to the complexity of the hardware specifications of the graphics cards and t
 
 To install all the requirements, just run the setup.bat file.  
 
-Make sure you have Python 3.10 or higher with pip installed before running the setup. 
+Make sure you have [Python](https://www.python.org/downloads/) 3.10 or higher with pip installed before running the setup. 
 
 This file will automaticly create a virtual environment with all the dependencies already installed.
 The depedencies that are going to be installed are:
