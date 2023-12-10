@@ -15,7 +15,13 @@ def update(df):
             try:
                 new_df= pd.read_csv(new_df)
                 new_df.set_index("id", inplace=True)
-                new_df = pd.merge(df, new_df, how='outer', on='clave')
+
+                new_df_copy= new_df.copy()
+
+                column_names = df.columns.tolist()
+
+                new_df = pd.merge(df, new_df, how='outer', on=column_names)
+                new_df = new_df.combine_first(new_df_copy)
                 df= new_df
                 print("The Data Base was updated")
                 return df
