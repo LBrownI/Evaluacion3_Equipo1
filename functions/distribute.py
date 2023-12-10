@@ -1,7 +1,7 @@
 from functions.check import save_current_action
 
 def distribute(df):
-    id = int(input("\nEnter the id of the product you want to distribute: "))
+    id = int(input("Enter the id of the product you want to distribute: "))
 
     product = df.filter(items=[id], axis=0)
     gpu_name = product.iloc[0]["gpu_name"]
@@ -9,14 +9,13 @@ def distribute(df):
 
     print(f"The product (id: {id}) {gpu_name} currently has {current_stock} units available.")
 
-    distribution_location = input("Enter the location where the product will be distributed: ")
-    distribution_amount = int(input("How much do you want to distribute to the location: "))
+    distribution_location = input("\nEnter the location where the product will be distributed: ")
+    distribution_amount = int(input("Enter the amount of units to distribute to the location: "))
 
     if distribution_amount > current_stock:
-        print("Error: Distribution amount exceeds current stock.")
+        print("ERROR: Distribution amount exceeds current stock.")
         return
 
-    # Deduct stock for distribution
     df.at[id, 'stock'] = current_stock - distribution_amount
     print(f"{distribution_amount} units of {gpu_name} distributed to {distribution_location} successfully.")
 

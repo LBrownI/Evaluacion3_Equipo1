@@ -1,3 +1,4 @@
+from functions.check import save_current_action
 import pandas as pd
 from functions.graphic_cards import Nvidia, Amd, Intel, Ati, Matrox
 
@@ -7,18 +8,22 @@ df.set_index("id", inplace=True)
 
 
 def br():
-    brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati"]
-    brand = input(f"What brand are you looking for? Please select one of these brands: \n {brands}\n").capitalize()
+    global brand
+    brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati", "None"]
+    brand = input(f"Select one of these brands or type 'None' for Full CSV download: \n {brands}\n").capitalize()
     while brand not in brands:
         brand = input(f"Please just select one of these brands: \n{brands}\n").capitalize()
     return brand
 
 def locate_brand(brand, df):
-    rows = df[df["gpu_name"].str.match(brand, case=False)]
-    
-    if rows.empty:
-        print(f"No GPUs matching brand '{brand}' were found.")
-    
+    if brand == "None":
+        rows = df
+    else:
+        rows = df[df["gpu_name"].str.match(brand, case=False)]
+        
+        if rows.empty:
+            print(f"No GPUs matching brand '{brand}' were found.")
+
     return rows
 
 def filters():
@@ -26,17 +31,19 @@ def filters():
     selected_filters = {"series": False,
             "gen": False,
             "ram": False}
-    
-    series_reply = input(f"Do you want to filter by {"series"}? (yes/no): ").lower()
-    if series_reply == 'yes':
-        selected_filters["series"] = True
-    if selected_filters.get("series"):
-        gen_reply = input(f"Do you want to filter by {"gen"}? (yes/no): ").lower()
-        if gen_reply == 'yes':
-            selected_filters["gen"] = True
-        ram_reply = input(f"Do you want to filter by {"ram"}? (yes/no): ").lower()
-        if ram_reply == 'yes':
-            selected_filters["ram"] = True
+    if brand == "None":
+        selected_filters = selected_filters
+    else:
+        series_reply = input(f"Do you want to filter by {"series"}? (yes/no): ").lower()
+        if series_reply == 'yes':
+            selected_filters["series"] = True
+        if selected_filters.get("series"):
+            gen_reply = input(f"Do you want to filter by {"gen"}? (yes/no): ").lower()
+            if gen_reply == 'yes':
+                selected_filters["gen"] = True
+            ram_reply = input(f"Do you want to filter by {"ram"}? (yes/no): ").lower()
+            if ram_reply == 'yes':
+                selected_filters["ram"] = True
 
 def ram(df):
     answer = input("Please put the GPU's RAM size(s) (comma-separated, Example: 4 GB, 8 GB): \n")
@@ -57,28 +64,28 @@ def csv_to_excel(df):
             sheet_name = 'Sheet1'
         df.to_excel(f"{excel_file}.xlsx", index=False, sheet_name=sheet_name)
         print(f"Excel file '{excel_file}.xlsx' downloaded successfully.")
+        save_current_action(f"[DOWNLOAD] An Excel with the name '{excel_file}.xlsx' has been downloaded with the following criteria active: brand = {brand}, {selected_filters}")
     except Exception as e:
         print(f"Error: {e}")
-
+    
 def download(df):
     download_option = input("\nDownload as Excel or CSV?\n").upper()
     while (download_option!="EXCEL")and(download_option!="CSV"):
-        download_option = input("Please just select 'Excel' or 'Csv': \n").upper()
+        download_option = input("Please just select 'Excel' or 'CSV': \n").upper()
     if download_option == "CSV":
         file_name = input("\nEnter the CSV file name for the download: ")
         try:
             df.to_csv(f"{file_name}.csv", index=False)
             print(f"CSV file '{file_name}.csv' downloaded successfully.")
+            save_current_action(f"[DOWNLOAD] An Excel with the name '{file_name}.csv' has been downloaded with the following criteria active: brand = {brand}, {selected_filters}")
         except Exception as e:
             print(f"Error: {e}")
     elif download_option == "EXCEL":
         csv_to_excel(df)
 
-def asjdiojasdjoiasd():
+def applied_filters():
     brand = br()
     filters()
-    print(f"\n{selected_filters}\n")
-
     filtered_df = locate_brand(brand, df)
    
     if selected_filters.get("series"):
@@ -126,4 +133,6 @@ def asjdiojasdjoiasd():
             filtered_df = a.get_filtered_df()
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
+        if brand == "None":
+            filtered_df = df
     download(filtered_df)

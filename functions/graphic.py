@@ -1,3 +1,4 @@
+from functions.check import save_current_action
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -48,3 +49,4 @@ def brand_pie_chart():
 
     plt.show()
 
+    save_current_action(f"[GRAPHIC] A graphical representation of the stock has been acquired")

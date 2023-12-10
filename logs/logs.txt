@@ -18,3 +18,13 @@
 04/12/2023 13:38:37: The product (id: 2) Intel i740 Graphics has been distributed. 4 units were sent to SPDigital. Remaining stock: 5
 05/12/2023 10:33:20: The product (id: 0) Intel i740 has been distributed. 1 units were sent to Miami. Remaining stock: 7
 05/12/2023 14:52:34: [DISTRIBUTE] The product (id: 2134) AMD Radeon HD 6850 has been distributed. 5 units were sent to mi casita. Remaining stock: 5
+10/12/2023 16:14:34: [RESTOCK] The product (id: 5) Intel i810 Graphics has been restocked. 9 new units were received from Miami, Florida. Now it has 10 units
+10/12/2023 16:16:14: [DISTRIBUTE] The product (id: 5) Intel i810 Graphics has been distributed. 10 units were sent to My House. Remaining stock: 0
+10/12/2023 16:51:56: [DOWNLOAD] An Excel with the name 'meow.xlsx' has been downloaded with the following criteria active: brand = Nvidia, {'series': True, 'gen': True, 'ram': False}
+10/12/2023 17:21:10: [DOWNLOAD] An Excel with the name 'murr2.xlsx' has been downloaded with the following criteria active: brand = None, {'series': False, 'gen': False, 'ram': False}
+10/12/2023 17:27:20: [GRAPHIC] A graphical representation of the stock has been acquired
+10/12/2023 17:27:52: [DOWNLOAD] An Excel with the name 'mao.xlsx' has been downloaded with the following criteria active: brand = None, {'series': False, 'gen': False, 'ram': False}
+10/12/2023 17:33:09: [DOWNLOAD] An Excel with the name 'adsadas.xlsx' has been downloaded with the following criteria active: brand = None, {'series': False, 'gen': False, 'ram': False}
+10/12/2023 17:38:18: [RESTOCK] The product (id: 3) Intel i752 Graphics has been restocked. 4 new units were received from AMD Motherbase. Now it has 4 units
+10/12/2023 17:48:42: [DOWNLOAD] An Excel with the name 'adsa.csv' has been downloaded with the following criteria active: brand = None, {'series': False, 'gen': False, 'ram': False}
+10/12/2023 17:50:06 - User: konko - Action: [DOWNLOAD] An Excel with the name 'ajfas.csv' has been downloaded with the following criteria active: brand = None, {'series': False, 'gen': False, 'ram': False}

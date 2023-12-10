@@ -30,3 +30,5 @@ def update(df):
             
         case "No":
             return df
+
+    save_current_action(f"[UPDATE] The working database has been updated")

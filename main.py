@@ -7,14 +7,14 @@ df.set_index("id", inplace=True)
 OPTIONS = ("Restock","Distribute","Check","Graphic","Download","Update","Exit")
 
 def menu():
-    option = input(f"\n*Welcome to inventory System*\nPlease choose one option:\n{OPTIONS}\n").capitalize()
+    option = input(f"\n -----> MAIN MENU <-----\nPlease choose one action:\n{OPTIONS}\n").capitalize()
     while option not in OPTIONS:
         option = input(f"\nPlease choose only one of the following options:\n{OPTIONS}\n").capitalize()
     return option
 
 while True:
     option=menu()
-    print("You chose:",option)
+    print(f"You chose: {option}\n")
 
     match option:
         case "Graphic":
@@ -26,11 +26,10 @@ while True:
         case "Check":
             check.print_logs()
         case "Download":
-            filter.asjdiojasdjoiasd()
+            filter.applied_filters()
         case "Update":
             df = update.update(df)
         case "Exit":
-            print("Saving files... (not really xd)")
             exit(0)
         
 
