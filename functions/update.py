@@ -3,7 +3,6 @@ from functions.check import save_current_action
 
 def update(df):
     new_df_location = input("Please input the new CSV's folder location (path): ")
-    df = pd.read_csv("database\\techpowerup_gpus.csv")
     try:
         new_df = pd.read_csv(new_df_location)
         if df is None or 'id' not in df.columns or 'id' not in new_df.columns:
