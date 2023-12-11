@@ -2,10 +2,6 @@ from functions.check import save_current_action
 import pandas as pd
 from functions.graphic_cards import Nvidia, Amd, Intel, Ati, Matrox
 
-df = pd.read_csv('database\\techpowerup_gpus.csv')
-df.set_index("id", inplace=True)
-
-
 
 def br():
     global brand
@@ -83,7 +79,7 @@ def download(df):
     elif download_option == "EXCEL":
         csv_to_excel(df)
 
-def applied_filters():
+def applied_filters(df):
     brand = br()
     filters()
     filtered_df = locate_brand(brand, df)

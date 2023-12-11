@@ -26,7 +26,7 @@ while True:
         case "Check":
             check.print_logs()
         case "Download":
-            filter.applied_filters()
+            filter.applied_filters(df)
         case "Update":
             df = update.update(df)
         case "Exit":
