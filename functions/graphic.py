@@ -15,10 +15,10 @@ def brand_pie_chart():
     # Explotar gráfica
     explode = (0.1, 0.0, 0.2, 0.3, 0.0)
     
-    # Creating color parameters
+    # Colores
     colors = ("yellowgreen", "crimson", "turquoise", "mediumblue", "black")
     
-    # Wedge properties
+    # Separación de piezas
     wp = {'linewidth': 1, 'edgecolor': "green"}
     
     # Creating autocpt arguments

@@ -6,7 +6,6 @@ df.set_index("id", inplace=True)
 class Amd:
     def __init__(self, df):
         self.df = df
-        
         self.df_with_filters = ""
         self.selected_series = ""
         
@@ -50,28 +49,23 @@ class Amd:
 
     def series(self):
         amd_series = list(self.series_and_gen.keys())
-        print("-----> AMD SERIES SELECT MENU <-----\n")
+        print("\n-----> AMD SERIES SELECT MENU <-----\n")
         for i, series in enumerate(amd_series):
             print(f"  [{i+1}] {series}")
-
         selected_series = int(input("\nSelected series: "))-1
         self.selected_series = amd_series[selected_series]
-        
         self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(amd_series[selected_series])]
-        print(self.df_with_filters)
-
 
     def gen(self):        
-        nvidia_gen = self.series_and_gen.get(self.selected_series)
-        print("-----> AMD GEN SELECT MENU <-----\n")
-        for i, gen in enumerate(nvidia_gen):
-            print(f"  [{i+1}] {gen}")
-
-        selected_gen = int(input("\nSelected gen: "))-1
-        
-        self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
-        print(self.df_with_filters)
-            
+        amd_gen = self.series_and_gen.get(self.selected_series)
+        if amd_gen == []:
+            self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.selected_series)]
+        else:    
+            print("\n-----> AMD GEN SELECT MENU <-----\n")
+            for i, gen in enumerate(amd_gen):
+                print(f"  [{i+1}] {gen}")
+            selected_gen = int(input("\nSelected gen: "))-1 
+            self.df_with_filters = self.df_with_filters[self.df_with_filters.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]
             
     def get_filtered_df(self):
         return self.df_with_filters
@@ -80,5 +74,3 @@ if __name__ == "__main__":
     b = Amd(df)
     b.series()
     b.gen()
-
-# asd

@@ -9,7 +9,7 @@ def distribute(df):
 
     print(f"The product (id: {id}) {gpu_name} currently has {current_stock} units available.")
 
-    distribution_location = input("\nEnter the location where the product will be distributed: ")
+    distribution_location = input("Enter the location where the product will be distributed: ")
     distribution_amount = int(input("Enter the amount of units to distribute to the location: "))
 
     if distribution_amount > current_stock:

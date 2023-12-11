@@ -10,7 +10,7 @@ df.set_index("id", inplace=True)
 def br():
     global brand
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati", "None"]
-    brand = input(f"Select one of these brands or type 'None' for Full CSV download: \n {brands}\n").capitalize()
+    brand = input(f"Select one of these brands or type 'None' for FULL database download: \n {brands}\nSelected: ").capitalize()
     while brand not in brands:
         brand = input(f"Please just select one of these brands: \n{brands}\n").capitalize()
     return brand
@@ -34,7 +34,7 @@ def filters():
     if brand == "None":
         selected_filters = selected_filters
     else:
-        series_reply = input(f"Do you want to filter by {"series"}? (yes/no): ").lower()
+        series_reply = input(f"\nDo you want to filter by {"series"}? (yes/no): ").lower()
         if series_reply == 'yes':
             selected_filters["series"] = True
         if selected_filters.get("series"):
@@ -53,7 +53,7 @@ def ram(df):
 
     if lines_ram.empty:
         print(f"GPUs with the specified RAM sizes weren't found.")
-        
+        lines_ram = df
     return lines_ram
 
 def csv_to_excel(df):
@@ -133,6 +133,7 @@ def applied_filters():
             filtered_df = a.get_filtered_df()
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
+                
         if brand == "None":
             filtered_df = df
     download(filtered_df)

@@ -2,7 +2,7 @@ import pandas as pd
 from functions.check import save_current_action
 
 def update(df):
-    new_df = input("Please input the new CSV's folder: ")
+    new_df = input("Please input the new CSV's folder location (path): ")
 
     try:
         new_df = pd.read_csv(new_df)
@@ -16,7 +16,7 @@ def update(df):
         new_df = new_df.combine_first(new_df_copy)
         df = new_df
         df.to_csv("database\\techpowerup_gpus.csv", index=False)
-        print("The Data Base was updated")
+        print("The Data Base has been updated")
     except:
         print("The folder doesn't exist, please verify it, verify the Data Base's name or the back-slashes")
 

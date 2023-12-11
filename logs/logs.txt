@@ -28,3 +28,11 @@
 10/12/2023 17:38:18: [RESTOCK] The product (id: 3) Intel i752 Graphics has been restocked. 4 new units were received from AMD Motherbase. Now it has 4 units
 10/12/2023 17:48:42: [DOWNLOAD] An Excel with the name 'adsa.csv' has been downloaded with the following criteria active: brand = None, {'series': False, 'gen': False, 'ram': False}
 10/12/2023 17:50:06 - User: konko - Action: [DOWNLOAD] An Excel with the name 'ajfas.csv' has been downloaded with the following criteria active: brand = None, {'series': False, 'gen': False, 'ram': False}
+10/12/2023 18:21:27 - User: konko - Action: [GRAPHIC] A graphical representation of the stock has been acquired
+10/12/2023 21:47:58 - User: silence - Action: [RESTOCK] The product (id: 3) Intel i752 Graphics has been restocked. 1 new units were received from Intel MOTHERBASE. Now it has 5 units
+10/12/2023 21:53:01 - User: silence - Action: [DISTRIBUTE] The product (id: 3) Intel i752 Graphics has been distributed. 1 units were sent to Tethys moon, Saturn. Remaining stock: 4
+10/12/2023 22:00:53 - User: silence - Action: [DOWNLOAD] An Excel with the name 'erer.xlsx' has been downloaded with the following criteria active: brand = Nvidia, {'series': True, 'gen': True, 'ram': False}
+10/12/2023 22:04:16 - User: silence - Action: [DOWNLOAD] An Excel with the name 'asdasd.xlsx' has been downloaded with the following criteria active: brand = Nvidia, {'series': True, 'gen': True, 'ram': True}
+10/12/2023 22:14:50 - User: silence - Action: [DOWNLOAD] An Excel with the name 'sfa.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': True, 'gen': True, 'ram': True}
+10/12/2023 22:47:59 - User: silence - Action: [DOWNLOAD] An Excel with the name 'asa.xlsx' has been downloaded with the following criteria active: brand = Nvidia, {'series': True, 'gen': True, 'ram': True}
+10/12/2023 22:58:20 - User: silence - Action: [GRAPHIC] A graphical representation of the stock has been acquired
