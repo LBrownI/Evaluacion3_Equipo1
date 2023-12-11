@@ -14,6 +14,8 @@ The depedencies that are going to be installed are:
 * matplotlib
 * openpyxl
 
+Then to use the code run the executable.bat
+
 ## Authors
 
 - [@LBrownI](https://www.github.com/LBrownI)
