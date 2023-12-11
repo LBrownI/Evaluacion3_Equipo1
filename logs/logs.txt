@@ -42,3 +42,4 @@
 11/12/2023 00:15:13 - User: silence - Action: [DOWNLOAD] An Excel with the name 'pirate_islands_2&8gb.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': True, 'gen': True, 'ram': True}
 11/12/2023 00:02:15 - User: alanb - Action: [DOWNLOAD] An Excel with the name 'pog.csv' has been downloaded with the following criteria active: brand = Nvidia, {'series': True, 'gen': True, 'ram': False}
 11/12/2023 00:32:34 - User: vince - Action: [UPDATE] The working database has been updated
+11/12/2023 01:33:01 - User: silence - Action: [UPDATE] The working database has been updated
