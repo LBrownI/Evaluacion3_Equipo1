@@ -5,8 +5,6 @@ from functions.graphic_cards import Nvidia, Amd, Intel, Ati, Matrox
 df = pd.read_csv('database\\techpowerup_gpus.csv')
 df.set_index("id", inplace=True)
 
-
-
 def br():
     global brand
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati", "None"]
@@ -133,7 +131,7 @@ def applied_filters():
             filtered_df = a.get_filtered_df()
             if selected_filters.get("ram"):
                 filtered_df = ram(filtered_df)
-                
+
         if brand == "None":
             filtered_df = df
     download(filtered_df)
