@@ -40,3 +40,4 @@
 10/12/2023 23:53:33 - User: alanb - Action: [RESTOCK] The product (id: 43) Intel HD Graphics has been restocked. 5 new units were received from Russia. Now it has 6 units
 11/12/2023 00:03:03 - User: silence - Action: [GRAPHIC] A graphical representation of the stock has been acquired
 11/12/2023 00:15:13 - User: silence - Action: [DOWNLOAD] An Excel with the name 'pirate_islands_2&8gb.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': True, 'gen': True, 'ram': True}
+11/12/2023 00:02:15 - User: alanb - Action: [DOWNLOAD] An Excel with the name 'pog.csv' has been downloaded with the following criteria active: brand = Nvidia, {'series': True, 'gen': True, 'ram': False}

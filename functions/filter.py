@@ -81,7 +81,7 @@ def download(df):
     elif download_option == "EXCEL":
         csv_to_excel(df)
 
-def applied_filters():
+def applied_filters(df):
     brand = br()
     filters()
     filtered_df = locate_brand(brand, df)
