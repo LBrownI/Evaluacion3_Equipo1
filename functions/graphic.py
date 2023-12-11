@@ -3,11 +3,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patheffects import withStroke
-
-df = pd.read_csv('database\\techpowerup_gpus.csv')
-df.set_index("id", inplace=True)
+#code highly attributed to https://www.geeksforgeeks.org/plot-a-pie-chart-in-python-using-matplotlib/
 
 def brand_pie_chart():
+    df = pd.read_csv('database\\techpowerup_gpus.csv')
+    df.set_index("id", inplace=True)
     brands = ["Nvidia", "Amd", "Intel", "Matrox", "Ati"]
 
     brand_stocks = [df[df["gpu_name"].str.contains(f"{brand} ", case=False)]["stock"].sum() for brand in brands]

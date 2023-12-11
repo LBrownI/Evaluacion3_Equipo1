@@ -39,7 +39,22 @@
 10/12/2023 23:53:18 - User: alanb - Action: [DISTRIBUTE] The product (id: 43) Intel HD Graphics has been distributed. 2 units were sent to China. Remaining stock: 1
 10/12/2023 23:53:33 - User: alanb - Action: [RESTOCK] The product (id: 43) Intel HD Graphics has been restocked. 5 new units were received from Russia. Now it has 6 units
 11/12/2023 00:03:03 - User: silence - Action: [GRAPHIC] A graphical representation of the stock has been acquired
-11/12/2023 00:15:13 - User: silence - Action: [DOWNLOAD] An Excel with the name 'pirate_islands_2&8gb.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': True, 'gen': True, 'ram': True}
+11/12/2023 00:15:13 - User: silence - Action: [DOWNLOAD] An Excel with the name 'pirate_islands_2&8gb.xlsx' has been downloaded with the following criteria active:brand = Amd, {'series': True, 'gen': True, 'ram': True}
 11/12/2023 00:02:15 - User: alanb - Action: [DOWNLOAD] An Excel with the name 'pog.csv' has been downloaded with the following criteria active: brand = Nvidia, {'series': True, 'gen': True, 'ram': False}
 11/12/2023 00:32:34 - User: vince - Action: [UPDATE] The working database has been updated
 11/12/2023 01:33:01 - User: silence - Action: [UPDATE] The working database has been updated
+11/12/2023 13:53:57 - User: admin - Action: [DOWNLOAD] An Excel with the name 'test123.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': False, 'gen': False, 'ram': True}
+11/12/2023 14:00:48 - User: admin - Action: [DOWNLOAD] An Excel with the name 'tes456.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': True, 'gen': False, 'ram': True}
+11/12/2023 14:03:27 - User: admin - Action: [DOWNLOAD] An Excel with the name 'gb.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': True, 'gen': False, 'ram': True}
+11/12/2023 14:06:52 - User: admin - Action: [DOWNLOAD] An Excel with the name 'mmmmm.xlsx' has been downloaded with the following criteria active: brand = Amd, {'series': True, 'gen': False, 'ram': True}
+11/12/2023 14:11:27 - User: admin - Action: [RESTOCK] The product (id: 99) Intel Iris Pro Graphics 580 has been restocked. 5 new units were received from Atlantis. Now it has 9 units
+11/12/2023 14:13:04 - User: admin - Action: [GRAPHIC] A graphical representation of the stock has been acquired
+11/12/2023 14:13:49 - User: admin - Action: [RESTOCK] The product (id: 55) Intel HD Graphics P4000 has been restocked. 100 new units were received from Rome. Now it has 106 units
+11/12/2023 14:14:21 - User: admin - Action: [GRAPHIC] A graphical representation of the stock has been acquired
+11/12/2023 14:17:17 - User: admin - Action: [GRAPHIC] A graphical representation of the stock has been acquired
+11/12/2023 14:19:10 - User: admin - Action: [DISTRIBUTE] The product (id: 55) Intel HD Graphics P4000 has been distributed. 100 units were sent to Lego Fortnite. Remaining stock: 6
+11/12/2023 14:19:19 - User: admin - Action: [GRAPHIC] A graphical representation of the stock has been acquired
+11/12/2023 14:54:02 - User: admin - Action: [GRAPHIC] A graphical representation of the stock has been acquired
+11/12/2023 14:57:23 - User: admin - Action: [RESTOCK] The product (id: 214) Matrox QID PRO has been restocked. 5000 new units were received from Wakanda. Now it has 5005 units
+11/12/2023 14:58:55 - User: admin - Action: [GRAPHIC] A graphical representation of the stock has been acquired
+11/12/2023 14:59:16 - User: admin - Action: [DISTRIBUTE] The product (id: 214) Matrox QID PRO has been distributed. 5000 units were sent to Narnia. Remaining stock: 5

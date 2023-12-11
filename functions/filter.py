@@ -1,6 +1,7 @@
 from functions.check import save_current_action
 import pandas as pd
 from functions.graphic_cards import Nvidia, Amd, Intel, Ati, Matrox
+#__init__ to avoid doing "from functions.graphic_cards.Nvidia import Nvidia" for every class
 
 df = pd.read_csv('database\\techpowerup_gpus.csv')
 df.set_index("id", inplace=True)
@@ -39,12 +40,12 @@ def filters():
             gen_reply = input(f"Do you want to filter by {"gen"}? (yes/no): ").lower()
             if gen_reply == 'yes':
                 selected_filters["gen"] = True
-            ram_reply = input(f"Do you want to filter by {"ram"}? (yes/no): ").lower()
-            if ram_reply == 'yes':
-                selected_filters["ram"] = True
+        ram_reply = input(f"Do you want to filter by {"ram"}? (yes/no): ").lower()
+        if ram_reply == 'yes':
+            selected_filters["ram"] = True
 
 def ram(df):
-    answer = input("Please put the GPU's RAM size(s) (comma-separated, Example: 4 GB, 8 GB): \n")
+    answer = input("Please put the GPU's RAM size(s) (comma-separated, Example: 4 GB, 8 GB, 64 MB): \n")
     ram_sizes_to_search = [ram.strip().lower() for ram in answer.split(',')]
 
     lines_ram = df[df["memory_memory_size"].str.lower().isin(ram_sizes_to_search)]
@@ -92,9 +93,7 @@ def applied_filters(df):
             a.series()
             if selected_filters.get("gen"):
                 a.gen()
-            filtered_df = a.get_filtered_df()
-            if selected_filters.get("ram"):
-                filtered_df = ram(filtered_df)           
+            filtered_df = a.get_filtered_df()         
 
         if brand == "Amd":
             a = Amd(df)
@@ -102,8 +101,6 @@ def applied_filters(df):
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            if selected_filters.get("ram"):
-                filtered_df = ram(filtered_df)
 
         if brand == "Matrox":
             a = Matrox(df)
@@ -111,8 +108,6 @@ def applied_filters(df):
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            if selected_filters.get("ram"):
-                filtered_df = ram(filtered_df)
         
         if brand == "Intel":
             a = Intel(df)
@@ -120,8 +115,6 @@ def applied_filters(df):
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            if selected_filters.get("ram"):
-                filtered_df = ram(filtered_df)
         
         if brand == "Ati":
             a = Ati(df)
@@ -129,9 +122,9 @@ def applied_filters(df):
             if selected_filters.get("gen"):
                 a.gen()
             filtered_df = a.get_filtered_df()
-            if selected_filters.get("ram"):
-                filtered_df = ram(filtered_df)
 
         if brand == "None":
             filtered_df = df
+    if selected_filters.get("ram"):
+        filtered_df = ram(filtered_df)
     download(filtered_df)

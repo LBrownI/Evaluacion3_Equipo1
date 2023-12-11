@@ -30,7 +30,7 @@ def print_logs():
             lines = file.readlines()
 
         start_line = len(lines) - 1
-        num_lines_displayed = 15
+        num_lines_displayed = 14
 
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
