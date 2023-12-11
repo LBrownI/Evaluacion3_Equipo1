@@ -47,8 +47,8 @@ class Intel:
                 print(f"  [{i+1}] {gen}")
             selected_gen = int(input("\nSelected gen: "))-1
             if intel_gen[selected_gen] == "Goldmont":
-                self.df_with_filters = self.df[self.df["graphics_card_generation"] == "Goldmont"]   
-            if intel_gen[selected_gen] == "Graphics":
+                self.df_with_filters = self.df[self.df["graphics_card_generation"] == "HD Graphics-T (Goldmont)"]   
+            elif intel_gen[selected_gen] == "Graphics":
                 self.df_with_filters = self.df[self.df["graphics_card_generation"] == "Graphics"]    
             else:
                 self.df_with_filters = self.df[self.df.graphics_card_generation.str.contains(self.series_and_gen.get(self.selected_series)[selected_gen])]

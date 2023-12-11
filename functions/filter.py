@@ -57,7 +57,7 @@ def ram(df):
 
 def csv_to_excel(df):
     try:
-        excel_file = input("\nEnter the  file name for the download: ")
+        excel_file = input("\nEnter the file name for the download: ")
         sheet_name = input("\nEnter the sheet name for the Excel file (press Enter for default 'Sheet1'): ")
         if not sheet_name:
             sheet_name = 'Sheet1'

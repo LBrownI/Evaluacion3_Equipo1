@@ -58,3 +58,7 @@
 11/12/2023 14:57:23 - User: admin - Action: [RESTOCK] The product (id: 214) Matrox QID PRO has been restocked. 5000 new units were received from Wakanda. Now it has 5005 units
 11/12/2023 14:58:55 - User: admin - Action: [GRAPHIC] A graphical representation of the stock has been acquired
 11/12/2023 14:59:16 - User: admin - Action: [DISTRIBUTE] The product (id: 214) Matrox QID PRO has been distributed. 5000 units were sent to Narnia. Remaining stock: 5
+11/12/2023 15:15:23 - User: admin - Action: [DOWNLOAD] An Excel with the name 'nvidia_only.xlsx' has been downloaded with the following criteria active: brand = Nvidia, {'series': False, 'gen': False, 'ram': False}
+11/12/2023 15:25:20 - User: admin - Action: [DOWNLOAD] An Excel with the name 'gol.xlsx' has been downloaded with the following criteria active: brand = Intel, {'series': True, 'gen': True, 'ram': False}
+11/12/2023 15:27:34 - User: admin - Action: [DOWNLOAD] An Excel with the name 'gold.xlsx' has been downloaded with the following criteria active: brand = Intel, {'series': True, 'gen': True, 'ram': False}
+11/12/2023 15:29:58 - User: admin - Action: [DOWNLOAD] An Excel with the name 'gol2.xlsx' has been downloaded with the following criteria active: brand = Intel, {'series': True, 'gen': True, 'ram': False}
